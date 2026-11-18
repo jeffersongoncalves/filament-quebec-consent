@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\QuebecConsent;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class QuebecConsentServiceProvider extends PackageServiceProvider
+class QuebecConsentServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-quebec-consent';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-quebec-consent')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
